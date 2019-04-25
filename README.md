@@ -14,6 +14,18 @@ The TensorFlow Profiler (TFProf) UI provides a visual interface for profiling Te
    python ui.py --profile_context_path=/path/to/your/profile.context
    ```
 
+# Using a docker container
+Building the image
+```
+docker build -t profiler .
+```
+
+Running in a container
+```
+docker run -it -p 7007:7007 --mount type=bind,source=PATH_TO_PROFILE_CONTEXT_FILE,target=/tmp/profile profiler --profile_context_path=/tmp/profile
+```
+
+
 # Learn more
 You can learn more about the TensorFlow Profiler's Python API and CLI [here](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/profiler/README.md#quick-start).
 
